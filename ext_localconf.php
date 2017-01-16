@@ -1,13 +1,6 @@
 <?php
-if (!defined ('TYPO3_MODE'))     die ('Access denied.');
-
-
-if (!defined ('STATIC_INFO_TABLES_EXTkey')) {
-    define('STATIC_INFO_TABLES_EXTkey','static_info_tables');
+if (!defined('TYPO3_MODE')) {
+	die('Access denied.');
 }
 
-
-
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][STATIC_INFO_TABLES_EXTkey]['extendingTCA'][] = $_EXTKEY;
-
-?>
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/Extbase/setup.txt">');
