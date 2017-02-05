@@ -7,6 +7,7 @@ namespace SJBR\StaticInfoTablesSv;
  *
  *  (c) 2013-2015 Stanislas Rolland <typo3(arobas)sjbr.ca>
  *  (c) 2017 Ephraim Härer <ephraim.haerer@renolit.com>
+ *  (c) 2017 Mathias Bolt Lesniak <mathias@pixelant.no>
  *  All rights reserved
  *
  *  This script is part of the Typo3 project. The Typo3 project is
@@ -25,7 +26,10 @@ namespace SJBR\StaticInfoTablesSv;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
+use SJBR\StaticInfoTables\Cache\ClassCacheManager;
+use SJBR\StaticInfoTables\Utility\DatabaseUpdateUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -42,20 +46,17 @@ class ext_update
 	public function main()
 	{
 		$content = '';
-		/** @var \TYPO3\CMS\Extbase\Object\ObjectManager $objectManager */
-		$objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+		$objectManager = GeneralUtility::makeInstance(ObjectManager::class);
 
 		// Clear the class cache
-		/** @var \SJBR\StaticInfoTables\Cache\ClassCacheManager $classCacheManager */
-		$classCacheManager = $objectManager->get('SJBR\\StaticInfoTables\\Cache\\ClassCacheManager');
+		$classCacheManager = $objectManager->get(ClassCacheManager::class);
 		$classCacheManager->reBuild();
 
 		// Update the database
-		/** @var \SJBR\StaticInfoTables\Utility\DatabaseUpdateUtility $databaseUpdateUtility */
-		$databaseUpdateUtility = $objectManager->get('SJBR\\StaticInfoTables\\Utility\\DatabaseUpdateUtility');
+		$databaseUpdateUtility = $objectManager->get(DatabaseUpdateUtility::class);
 		$databaseUpdateUtility->doUpdate('static_info_tables_sv');
 
-		$content .= '<p>' . LocalizationUtility::translate('updateLanguageLabels', 'StaticInfoTables') . ' static_info_tables_sv.</p>';
+		$content.= '<p>' . LocalizationUtility::translate('updateLanguageLabels', 'StaticInfoTables') . ' static_info_tables_sv.</p>';
 		return $content;
 	}
 
