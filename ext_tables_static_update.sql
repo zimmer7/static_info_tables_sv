@@ -1,3 +1,5 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 ##static countries
 UPDATE static_countries SET cn_short_sv='Andorra' WHERE cn_iso_2='AD';
 UPDATE static_countries SET cn_short_sv='Förenade arabemiraten' WHERE cn_iso_2='AE';
@@ -563,30 +565,30 @@ UPDATE static_languages SET lg_name_sv='Zhuang' WHERE lg_iso_2='ZA' AND LG_COUNT
 UPDATE static_languages SET lg_name_sv='Kinesiska' WHERE lg_iso_2='ZH' AND LG_COUNTRY_ISO_2='';
 UPDATE static_languages SET lg_name_sv='Zulu' WHERE lg_iso_2='ZU' AND LG_COUNTRY_ISO_2='';
 ## static_territories
-UPDATE static_territories SET tr_name_no='Afrika' WHERE tr_iso_nr='2';
-UPDATE static_territories SET tr_name_no='Oceanien' WHERE tr_iso_nr='9';
-UPDATE static_territories SET tr_name_no='Nord-, Sentral- og Sør-Amerika' WHERE tr_iso_nr='19';
-UPDATE static_territories SET tr_name_no='Asien' WHERE tr_iso_nr='142';
-UPDATE static_territories SET tr_name_no='Europa' WHERE tr_iso_nr='150';
-UPDATE static_territories SET tr_name_no='Östasien' WHERE tr_iso_nr='30';
-UPDATE static_territories SET tr_name_no='Söröstasien' WHERE tr_iso_nr='35';
-UPDATE static_territories SET tr_name_no='0' WHERE tr_iso_nr='143';
-UPDATE static_territories SET tr_name_no='Vestasien' WHERE tr_iso_nr='145';
-UPDATE static_territories SET tr_name_no='Sydeuropa' WHERE tr_iso_nr='39';
-UPDATE static_territories SET tr_name_no='Östeuropa' WHERE tr_iso_nr='151';
-UPDATE static_territories SET tr_name_no='Nordeuropa' WHERE tr_iso_nr='154';
-UPDATE static_territories SET tr_name_no='Vesteuropa' WHERE tr_iso_nr='155';
-UPDATE static_territories SET tr_name_no='Sydamerika' WHERE tr_iso_nr='5';
-UPDATE static_territories SET tr_name_no='Cantralamerika' WHERE tr_iso_nr='13';
-UPDATE static_territories SET tr_name_no='Nordamerika' WHERE tr_iso_nr='21';
-UPDATE static_territories SET tr_name_no='Karibien' WHERE tr_iso_nr='29';
-UPDATE static_territories SET tr_name_no='Vestafrika' WHERE tr_iso_nr='11';
-UPDATE static_territories SET tr_name_no='Östafrika' WHERE tr_iso_nr='14';
-UPDATE static_territories SET tr_name_no='Nordafrika' WHERE tr_iso_nr='15';
-UPDATE static_territories SET tr_name_no='Centralafrika' WHERE tr_iso_nr='17';
-UPDATE static_territories SET tr_name_no='Sydafrika' WHERE tr_iso_nr='18';
-UPDATE static_territories SET tr_name_no='Australien og New Zealand' WHERE tr_iso_nr='53';
-UPDATE static_territories SET tr_name_no='Melanesien' WHERE tr_iso_nr='54';
-UPDATE static_territories SET tr_name_no='Mikronesien' WHERE tr_iso_nr='57';
-UPDATE static_territories SET tr_name_no='Polynesien' WHERE tr_iso_nr='61';
-UPDATE static_territories SET tr_name_no='0' WHERE tr_iso_nr='34';
+UPDATE static_territories SET tr_name_sv='Afrika' WHERE tr_iso_nr='2';
+UPDATE static_territories SET tr_name_sv='Oceanien' WHERE tr_iso_nr='9';
+UPDATE static_territories SET tr_name_sv='Nord-, Central- och Sör-Amerika' WHERE tr_iso_nr='19';
+UPDATE static_territories SET tr_name_sv='Asien' WHERE tr_iso_nr='142';
+UPDATE static_territories SET tr_name_sv='Europa' WHERE tr_iso_nr='150';
+UPDATE static_territories SET tr_name_sv='Östasien' WHERE tr_iso_nr='30';
+UPDATE static_territories SET tr_name_sv='Söröstasien' WHERE tr_iso_nr='35';
+UPDATE static_territories SET tr_name_sv='0' WHERE tr_iso_nr='143';
+UPDATE static_territories SET tr_name_sv='Vestasien' WHERE tr_iso_nr='145';
+UPDATE static_territories SET tr_name_sv='Sydeuropa' WHERE tr_iso_nr='39';
+UPDATE static_territories SET tr_name_sv='Östeuropa' WHERE tr_iso_nr='151';
+UPDATE static_territories SET tr_name_sv='Nordeuropa' WHERE tr_iso_nr='154';
+UPDATE static_territories SET tr_name_sv='Vesteuropa' WHERE tr_iso_nr='155';
+UPDATE static_territories SET tr_name_sv='Sydamerika' WHERE tr_iso_nr='5';
+UPDATE static_territories SET tr_name_sv='Cantralamerika' WHERE tr_iso_nr='13';
+UPDATE static_territories SET tr_name_sv='Nordamerika' WHERE tr_iso_nr='21';
+UPDATE static_territories SET tr_name_sv='Karibien' WHERE tr_iso_nr='29';
+UPDATE static_territories SET tr_name_sv='Vestafrika' WHERE tr_iso_nr='11';
+UPDATE static_territories SET tr_name_sv='Östafrika' WHERE tr_iso_nr='14';
+UPDATE static_territories SET tr_name_sv='Nordafrika' WHERE tr_iso_nr='15';
+UPDATE static_territories SET tr_name_sv='Centralafrika' WHERE tr_iso_nr='17';
+UPDATE static_territories SET tr_name_sv='Sydafrika' WHERE tr_iso_nr='18';
+UPDATE static_territories SET tr_name_sv='Australien og New Zealand' WHERE tr_iso_nr='53';
+UPDATE static_territories SET tr_name_sv='Melanesien' WHERE tr_iso_nr='54';
+UPDATE static_territories SET tr_name_sv='Mikronesien' WHERE tr_iso_nr='57';
+UPDATE static_territories SET tr_name_sv='Polynesien' WHERE tr_iso_nr='61';
+UPDATE static_territories SET tr_name_sv='0' WHERE tr_iso_nr='34';
