@@ -1,12 +1,13 @@
 {
   "name": "sjbr/static_info_tables_sv",
-  "description": "Swedish (sv) language pack for the Static Info Tables providing localized names for countries, currencies and so on.",
+  "description": "Swedish (sv) language pack for the Static Info Tables providing localized names for countries, currencies, etc.",
   "version": "6.2.0",
   "type": "typo3-cms-extension",
   "license": "GPL-2.0+",
   "authors": [
     {
       "name": "Mathas Bolt Lesniak",
+      "email": "mathias@pixelant.no",
       "role": "Developer"
     }
   ],

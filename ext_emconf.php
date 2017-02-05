@@ -10,7 +10,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Static Info Tables (sv)',
-	'description' => 'Swedish language pack for Static Info Tables. (Authored by a Norwegian. Any Swedes willing to take it over?)',
+	'description' => 'Swedish language pack for Static Info Tables.',
 	'category' => 'misc',
 	'shy' => 0,
 	'version' => '6.2.0',
@@ -25,9 +25,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearcacheonload' => 0,
 	'lockType' => '',
-	'author' => 'Mathas Bolt Lesniak, LiliO Design',
-	'author_email' => 'mathias@lilio.com',
-	'author_company' => 'LiliO Design',
+	'author' => 'Mathas Bolt Lesniak',
+	'author_email' => 'mathias@pixelant.no',
+	'author_company' => 'Pixelant',
 	'CGLcompliance' => '',
 	'CGLcompliance_note' => '',
 	'constraints' => array(
