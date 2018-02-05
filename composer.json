@@ -15,7 +15,7 @@
     "sjbr/static_info_tables_sv": "*"
   },
   "require": {
-    "typo3/cms-core": "7.6.0-7.9.99",
+    "typo3/cms-core": "7.6.0-8.9.99",
     "sjbr/static_info_tables": "^6.4.0"
   }
 }

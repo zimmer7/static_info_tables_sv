@@ -8,36 +8,36 @@
 # writing. "version" and "dependencies" must not be touched!
 ########################################################################
 
-$EM_CONF[$_EXTKEY] = array(
-	'title' => 'Static Info Tables (sv)',
-	'description' => 'Swedish language pack for Static Info Tables.',
-	'category' => 'misc',
-	'shy' => 0,
-	'version' => '6.4.0',
-	'dependencies' => '',
-	'conflicts' => '',
-	'priority' => '',
-	'loadOrder' => '',
-	'module' => '',
-	'state' => 'stable',
-	'uploadfolder' => 0,
-	'createDirs' => '',
-	'modify_tables' => '',
-	'clearcacheonload' => 0,
-	'lockType' => '',
-	'author' => 'Mathas Bolt Lesniak',
-	'author_email' => 'mathias@pixelant.no',
-	'author_company' => 'Pixelant',
-	'CGLcompliance' => '',
-	'CGLcompliance_note' => '',
-	'constraints' => array(
-		'depends' => array(
-			'static_info_tables' => '6.4.0-6.4.99',
-			'typo3' => '7.6.0-7.99.99',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
-);
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'Static Info Tables (sv)',
+    'description' => 'Swedish language pack for Static Info Tables.',
+    'category' => 'misc',
+    'shy' => 0,
+    'version' => '6.4.0',
+    'dependencies' => '',
+    'conflicts' => '',
+    'priority' => '',
+    'loadOrder' => '',
+    'module' => '',
+    'state' => 'stable',
+    'uploadfolder' => 0,
+    'createDirs' => '',
+    'modify_tables' => '',
+    'clearcacheonload' => 0,
+    'lockType' => '',
+    'author' => 'Mathas Bolt Lesniak',
+    'author_email' => 'mathias@pixelant.no',
+    'author_company' => 'Pixelant',
+    'CGLcompliance' => '',
+    'CGLcompliance_note' => '',
+    'constraints' => [
+        'depends' => [
+            'static_info_tables' => '6.4.0-6.4.99',
+            'typo3' => '7.6.0-8.99.99',
+        ],
+        'conflicts' => [
+        ],
+        'suggests' => [
+        ]
+    ]
+];
