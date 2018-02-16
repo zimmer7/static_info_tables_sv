@@ -1,7 +1,7 @@
 {
   "name": "sjbr/static_info_tables_sv",
   "description": "Swedish (sv) language pack for the Static Info Tables providing localized names for countries, currencies, etc.",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "type": "typo3-cms-extension",
   "license": "GPL-2.0+",
   "authors": [
