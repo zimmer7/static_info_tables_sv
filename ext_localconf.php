@@ -1,6 +1,10 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3_MODE') || die;
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
-    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/Extbase/setup.txt">'
+call_user_func(
+    function($extensionKey) {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
+            sprintf('@import \'EXT:%s/Configuration/TypoScript/Extbase/setup.typoscript\'', $extensionKey)
+        );
+    }, \Leuchtfeuer\StaticInfoTablesSv\Extension::EXTENSION_KEY
 );

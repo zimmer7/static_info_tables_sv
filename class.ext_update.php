@@ -1,67 +1,40 @@
 <?php
 
-namespace SJBR\StaticInfoTablesSv;
+declare(strict_types=1);
 
-/* * *************************************************************
- *  Copyright notice
- *
- *  (c) 2013-2015 Stanislas Rolland <typo3(arobas)sjbr.ca>
- *  (c) 2017 Ephraim Härer <ephraim.haerer@renolit.com>
- *  (c) 2017 Mathias Bolt Lesniak <mathias@pixelant.no>
- *  All rights reserved
- *
- *  This script is part of the Typo3 project. The Typo3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- * ************************************************************* */
+/*
+ * This file is part of the "Static Info Tables (SV)" extension for TYPO3 CMS.
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
+ */
+
+namespace Leuchtfeuer\StaticInfoTablesSv;
+
 use SJBR\StaticInfoTables\Cache\ClassCacheManager;
 use SJBR\StaticInfoTables\Utility\DatabaseUpdateUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
-/**
- * Class for updating the db
- */
 class ext_update
 {
+    public function main(): string
+    {
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
 
-	/**
-	 * Main function, returning the HTML content
-	 *
-	 * @return string HTML
-	 */
-	public function main()
-	{
-		$content = '';
-		$objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        // Clear the class cache and update the database
+        $objectManager->get(ClassCacheManager::class)->reBuild();
+        $objectManager->get(DatabaseUpdateUtility::class)->doUpdate(Extension::EXTENSION_KEY);
 
-		// Clear the class cache
-		$classCacheManager = $objectManager->get(ClassCacheManager::class);
-		$classCacheManager->reBuild();
+        return sprintf(
+            '<div class="callout callout-info"><div class="media"><div class="media-left"><span class="fa-stack fa-lg callout-icon"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-info fa-stack-1x"></i></span></div><div class="media-body"><div class="callout-body"><p>%s</p></div></div></div></div>',
+            LocalizationUtility::translate('updateLanguageLabels', 'StaticInfoTables', [Extension::EXTENSION_KEY])
+        );
+    }
 
-		// Update the database
-		$databaseUpdateUtility = $objectManager->get(DatabaseUpdateUtility::class);
-		$databaseUpdateUtility->doUpdate('static_info_tables_sv');
-
-		$content.= '<p>' . LocalizationUtility::translate('updateLanguageLabels', 'StaticInfoTables') . ' static_info_tables_sv.</p>';
-		return $content;
-	}
-
-	public function access()
-	{
-		return true;
-	}
+    public function access(): bool
+    {
+        return true;
+    }
 }

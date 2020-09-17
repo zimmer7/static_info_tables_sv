@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the "Static Info Tables (SV)" extension for TYPO3 CMS.
  * For the full copyright and license information, please read the
@@ -7,12 +9,9 @@
  * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
  */
 
-defined('TYPO3_MODE') || die;
+namespace Bitmotion\StaticInfoTablesSv;
 
-call_user_func(
-    function ($additionalFields, $dataSetName) {
-        \Bitmotion\StaticInfoTablesSv\Provider\TcaProvider::generateAndRegisterTca($additionalFields, $dataSetName);
-    },
-    ['tr_name_en' => 'tr_name_sv'],
-    'static_territories'
-);
+class Extension
+{
+    const EXTENSION_KEY = 'static_info_tables_sv';
+}

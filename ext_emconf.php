@@ -1,43 +1,29 @@
 <?php
-########################################################################
-# Extension Manager/Repository config file for ext "static_info_tables_sv".
-#
-#
-# Manual updates:
-# Only the data in the array - everything else is removed by next
-# writing. "version" and "dependencies" must not be touched!
-########################################################################
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['static_info_tables_sv'] = [
     'title' => 'Static Info Tables (sv)',
-    'description' => 'Swedish language pack for Static Info Tables.',
+    'description' => 'Swedish (sv) language pack for the Static Info Tables providing localized names for countries.',
     'category' => 'misc',
-    'shy' => 0,
-    'version' => '6.5.0',
-    'dependencies' => '',
-    'conflicts' => '',
-    'priority' => '',
-    'loadOrder' => '',
-    'module' => '',
+    'version' => '6.9.0',
     'state' => 'stable',
-    'uploadfolder' => 0,
+    'uploadfolder' => false,
     'createDirs' => '',
-    'modify_tables' => '',
-    'clearcacheonload' => 0,
-    'lockType' => '',
-    'author' => 'Mathas Bolt Lesniak',
-    'author_email' => 'mathias@pixelant.no',
-    'author_company' => 'Pixelant',
-    'CGLcompliance' => '',
-    'CGLcompliance_note' => '',
+    'clearcacheonload' => false,
+    'author' => 'Florian Wessels',
+    'author_email' => 'dev@Leuchtfeuer.com',
+    'author_company' => 'Leuchtfeuer Digital Marketing',
     'constraints' => [
         'depends' => [
-            'static_info_tables' => '6.4.0-6.5.99',
-            'typo3' => '7.6.0-8.99.99',
+            'typo3' => '9.5.0-10.4.99',
+            'php' => '7.2.0-7.4.99',
+            'static_info_tables' => '6.9.0-6.99.99',
         ],
-        'conflicts' => [
+        'conflicts' => [],
+        'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'Leuchtfeuer\\StaticInfoTablesSv\\' => 'Classes',
         ],
-        'suggests' => [
-        ]
-    ]
+    ],
 ];

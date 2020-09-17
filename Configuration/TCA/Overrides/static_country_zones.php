@@ -1,16 +1,18 @@
 <?php
-defined('TYPO3_MODE') or die();
 
-$sourceField = 'zn_name_en';
-$destField = 'zn_name_sv';
+/*
+ * This file is part of the "Static Info Tables (SV)" extension for TYPO3 CMS.
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
+ */
 
-$additionalColumns = array();
-$additionalColumns[$destField] = $GLOBALS['TCA']['static_country_zones']['columns'][$sourceField];
-$additionalColumns[$destField]['label'] = 'LLL:EXT:static_info_tables_sv/Resources/Private/Language/locallang_db.xlf:static_country_zones_item.' . $destField;
+defined('TYPO3_MODE') || die;
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('static_country_zones', $additionalColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('static_country_zones', $destField, '', 'after:' . $sourceField);
-// Add as search field
-$GLOBALS['TCA']['static_country_zones']['ctrl']['searchFields'] .= ',' . $destField;
-
-unset($additionalColumns, $additionalFields);
+call_user_func(
+    function ($additionalFields, $dataSetName) {
+        \Bitmotion\StaticInfoTablesSv\Provider\TcaProvider::generateAndRegisterTca($additionalFields, $dataSetName);
+    },
+    ['zn_name_en' => 'zn_name_sv'],
+    'static_country_zones'
+);

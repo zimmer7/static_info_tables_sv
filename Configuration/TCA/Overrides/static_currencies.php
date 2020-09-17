@@ -1,19 +1,18 @@
 <?php
-defined('TYPO3_MODE') or die();
 
-$additionalFields = array(
-	'cu_name_en' => 'cu_name_sv',
-	'cu_sub_name_en' => 'cu_sub_name_sv'
+/*
+ * This file is part of the "Static Info Tables (SV)" extension for TYPO3 CMS.
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
+ */
+
+defined('TYPO3_MODE') || die;
+
+call_user_func(
+    function ($additionalFields, $dataSetName) {
+        \Bitmotion\StaticInfoTablesSv\Provider\TcaProvider::generateAndRegisterTca($additionalFields, $dataSetName);
+    },
+    ['cu_name_en' => 'cu_name_sv', 'cu_sub_name_en' => 'cu_sub_name_sv'],
+    'static_currencies'
 );
-
-foreach ($additionalFields as $sourceField => $destField) {
-	$additionalColumns = array();
-	$additionalColumns[$destField] = $GLOBALS['TCA']['static_currencies']['columns'][$sourceField];
-	$additionalColumns[$destField]['label'] = 'LLL:EXT:static_info_tables_sv/Resources/Private/Language/locallang_db.xlf:static_currencies_item.' . $destField;
-
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('static_currencies', $additionalColumns);
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('static_currencies', $destField, '', 'after:' . $sourceField);
-	// Add as search field
-	$GLOBALS['TCA']['static_currencies']['ctrl']['searchFields'] .= ',' . $destField;
-}
-unset($additionalColumns, $additionalFields);
