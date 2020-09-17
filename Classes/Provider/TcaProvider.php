@@ -9,9 +9,9 @@ declare(strict_types=1);
  * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
  */
 
-namespace Bitmotion\StaticInfoTablesSv\Provider;
+namespace Leuchtfeuer\StaticInfoTablesSv\Provider;
 
-use Bitmotion\StaticInfoTablesSv\Extension;
+use Leuchtfeuer\StaticInfoTablesSv\Extension;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 class TcaProvider
