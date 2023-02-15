@@ -7,7 +7,7 @@
  * Florian Wessels <f.wessels@Leuchtfeuer.com>, Leuchtfeuer Digital Marketing
  */
 
-defined('TYPO3_MODE') || die;
+defined('TYPO3') or die('Access denied.');
 
 call_user_func(
     function ($additionalFields, $dataSetName) {
