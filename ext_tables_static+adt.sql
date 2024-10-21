@@ -1,6 +1,6 @@
 # noinspection SqlNoDataSourceInspectionForFile
 
-##static countries
+## static countries
 UPDATE static_countries SET cn_short_sv='Andorra' WHERE cn_iso_2='AD';
 UPDATE static_countries SET cn_short_sv='Förenade arabemiraten' WHERE cn_iso_2='AE';
 UPDATE static_countries SET cn_short_sv='Afghanistan' WHERE cn_iso_2='AF';
@@ -241,7 +241,7 @@ UPDATE static_countries SET cn_short_sv='Sydafrika' WHERE cn_iso_2='ZA';
 UPDATE static_countries SET cn_short_sv='Zambia' WHERE cn_iso_2='ZM';
 UPDATE static_countries SET cn_short_sv='Zaire' WHERE cn_iso_2='ZR';
 UPDATE static_countries SET cn_short_sv='Zimbabwe' WHERE cn_iso_2='ZW';
-﻿##static currencies
+## static currencies
 UPDATE static_currencies SET cu_name_sv='UAE-dirham', cu_sub_name_sv='' WHERE cu_iso_3='AED';
 UPDATE static_currencies SET cu_name_sv='Afghani', cu_sub_name_sv='' WHERE cu_iso_3='AFN';
 UPDATE static_currencies SET cu_name_sv='Lek', cu_sub_name_sv='' WHERE cu_iso_3='ALL';
